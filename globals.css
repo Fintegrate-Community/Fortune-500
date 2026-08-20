@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --terminal-black: #0a0c09;
+  --terminal-panel: #12140f;
+  --terminal-line: #2a2e22;
+  --amber: #ffb000;
+  --amber-dim: #7a5700;
+  --parchment: #f2e8d0;
+  --parchment-edge: #c9b483;
+  --ink: #2a2013;
+  --ink-soft: #4a3d28;
+  --crash: #7a2e2e;
+  --crash-soft: #a44848;
+  --boom: #2c5c46;
+  --boom-soft: #457a63;
+  --quirk: #3c4a64;
+  --quirk-soft: #5c6c8c;
+}
+
+@theme inline {
+  --color-terminal-black: var(--terminal-black);
+  --color-terminal-panel: var(--terminal-panel);
+  --color-terminal-line: var(--terminal-line);
+  --color-amber: var(--amber);
+  --color-amber-dim: var(--amber-dim);
+  --color-parchment: var(--parchment);
+  --color-parchment-edge: var(--parchment-edge);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-crash: var(--crash);
+  --color-crash-soft: var(--crash-soft);
+  --color-boom: var(--boom);
+  --color-boom-soft: var(--boom-soft);
+  --color-quirk: var(--quirk);
+  --color-quirk-soft: var(--quirk-soft);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--terminal-black);
+  color: var(--parchment);
+  font-family: var(--font-body), sans-serif;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: scroll-left 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+@keyframes card-print {
+  0% { opacity: 0; transform: translateY(18px) scale(0.98); filter: blur(2px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+.card-print {
+  animation: card-print 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes crt-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.82; }
+  94% { opacity: 1; }
+}
+
+.crt-flicker {
+  animation: crt-flicker 4s infinite;
+}
