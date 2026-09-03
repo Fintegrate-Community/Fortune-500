@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       {status === "done" && result && (
-        <section ref={cardRef} className="mx-auto max-w-5xl px-6 pb-14">
+        <section ref={cardRef} className="mx-auto max-w-7xl px-6 pb-14">
           <FortuneCard event={result.event} exact={result.exact} daysAway={result.daysAway} />
 
           <div className="mx-auto mt-10 max-w-xl text-center font-mono text-base text-parchment/60">
