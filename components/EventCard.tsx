@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { MarketEvent } from "@/lib/events";
 
-const CARD_HEIGHT = "h-[620px] sm:h-[700px]";
+const CARD_HEIGHT = "h-[700px] sm:h-[780px]";
 
 const typeAccent: Record<MarketEvent["type"], string> = {
   crash: "bg-crash text-parchment",
