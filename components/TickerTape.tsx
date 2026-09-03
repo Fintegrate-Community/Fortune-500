@@ -11,8 +11,8 @@ export default function TickerTape() {
   const line = entries.join("     ///     ") + "     ///     ";
 
   return (
-    <div className="w-full overflow-hidden border-y border-terminal-line bg-terminal-panel py-2.5">
-      <div className="ticker-track flex w-max whitespace-nowrap font-mono text-[11px] tracking-wide text-amber/80 sm:text-xs">
+    <div className="w-full overflow-hidden border-y border-terminal-line bg-terminal-panel py-3.5">
+      <div className="ticker-track flex w-max whitespace-nowrap font-mono text-sm tracking-wide text-amber/80 sm:text-base">
         <span className="pr-0">{line}</span>
         <span aria-hidden="true">{line}</span>
       </div>
