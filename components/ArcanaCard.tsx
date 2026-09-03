@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ARCANA, type ArcanaId } from "@/lib/arcana";
 import ArcanaIllustration from "@/components/arcana/ArcanaIllustration";
 
-const CARD_HEIGHT = "h-[620px] sm:h-[700px]";
+const CARD_HEIGHT = "h-[700px] sm:h-[780px]";
 
 function TarotEmblem() {
   return (
@@ -85,7 +85,7 @@ export default function ArcanaCard({ arcanaId }: { arcanaId: ArcanaId }) {
               {arcana.name}
             </h2>
 
-            <div className="mx-auto mt-6 aspect-square w-full max-w-[240px] overflow-hidden rounded-full border border-amber/30 p-2 sm:max-w-[280px]">
+            <div className="mx-auto mt-5 aspect-[200/224] w-full max-w-[420px] overflow-hidden rounded-sm border border-amber/25">
               <ArcanaIllustration id={arcanaId} />
             </div>
 
