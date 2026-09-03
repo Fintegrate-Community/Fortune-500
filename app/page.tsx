@@ -57,14 +57,14 @@ export default function Home() {
     <main className="min-h-screen bg-terminal-black">
       <TickerTape />
 
-      <section className="mx-auto flex max-w-3xl flex-col items-center px-6 pb-24 pt-16 text-center sm:pt-24">
-        <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-amber-dim">
+      <section className="mx-auto flex max-w-5xl flex-col items-center px-6 pb-28 pt-16 text-center sm:pt-24">
+        <p className="font-mono text-sm uppercase tracking-[0.3em] text-amber-dim sm:text-base">
           Est. never · Trusted by no regulator
         </p>
-        <h1 className="crt-flicker mt-4 font-[family-name:var(--font-display)] text-5xl font-black text-amber sm:text-7xl">
+        <h1 className="crt-flicker mt-5 font-[family-name:var(--font-display)] text-6xl font-black text-amber sm:text-8xl">
           FORTUNE 500
         </h1>
-        <p className="mt-5 max-w-md font-[family-name:var(--font-body)] text-base text-parchment/80 sm:text-lg">
+        <p className="mt-6 max-w-2xl font-[family-name:var(--font-body)] text-xl text-parchment/80 sm:text-2xl">
           Your birthday, read like a balance sheet. Enter your date of birth and
           the Oracle will consult the historical record for the day the market
           truly showed its character.
@@ -72,9 +72,9 @@ export default function Home() {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-10 flex w-full max-w-sm flex-col items-center gap-4 rounded-md border border-terminal-line bg-terminal-panel p-6 shadow-[inset_0_0_40px_rgba(0,0,0,0.4)]"
+          className="mt-12 flex w-full max-w-md flex-col items-center gap-5 rounded-md border border-terminal-line bg-terminal-panel p-8 shadow-[inset_0_0_40px_rgba(0,0,0,0.4)]"
         >
-          <label htmlFor="dob" className="font-mono text-[11px] uppercase tracking-[0.2em] text-amber/70">
+          <label htmlFor="dob" className="font-mono text-base uppercase tracking-[0.2em] text-amber/70">
             Enter your date of birth
           </label>
           <input
@@ -84,29 +84,29 @@ export default function Home() {
             value={dob}
             max={new Date().toISOString().split("T")[0]}
             onChange={(e) => setDob(e.target.value)}
-            className="w-full rounded border border-amber-dim bg-terminal-black px-4 py-3 font-mono text-amber outline-none focus:border-amber focus:ring-1 focus:ring-amber"
+            className="w-full rounded border border-amber-dim bg-terminal-black px-5 py-4 font-mono text-xl text-amber outline-none focus:border-amber focus:ring-1 focus:ring-amber"
           />
           <button
             type="submit"
             disabled={status === "reading"}
-            className="mt-1 w-full rounded bg-amber px-4 py-3 font-mono text-sm font-semibold uppercase tracking-[0.15em] text-terminal-black transition hover:bg-amber/90 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-1 w-full rounded bg-amber px-5 py-4 font-mono text-lg font-semibold uppercase tracking-[0.15em] text-terminal-black transition hover:bg-amber/90 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "reading" ? "Consulting the ticker…" : "Read My Fortune"}
           </button>
         </form>
 
         {status === "reading" && (
-          <p className="mt-8 animate-pulse font-mono text-xs uppercase tracking-[0.2em] text-amber/60">
+          <p className="mt-10 animate-pulse font-mono text-base uppercase tracking-[0.2em] text-amber/60">
             Cross-referencing 90+ years of market history…
           </p>
         )}
       </section>
 
       {status === "done" && result && (
-        <section ref={cardRef} className="mx-auto max-w-3xl px-6 pb-10">
+        <section ref={cardRef} className="mx-auto max-w-5xl px-6 pb-14">
           <FortuneCard event={result.event} exact={result.exact} daysAway={result.daysAway} />
 
-          <div className="mx-auto mt-8 max-w-md text-center font-mono text-xs text-parchment/60">
+          <div className="mx-auto mt-10 max-w-xl text-center font-mono text-base text-parchment/60">
             <p>
               Across every reading in the archive: {dist.crashPct}% crash,{" "}
               {dist.boomPct}% boom, {dist.quirkPct}% pure anomaly. Your result
@@ -114,16 +114,16 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto mt-6 flex max-w-md flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <div className="mx-auto mt-8 flex max-w-xl flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <button
               onClick={copyFortune}
-              className="w-full rounded border border-amber-dim px-5 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-amber transition hover:border-amber sm:w-auto"
+              className="w-full rounded border border-amber-dim px-6 py-3.5 font-mono text-base uppercase tracking-[0.15em] text-amber transition hover:border-amber sm:w-auto"
             >
               {copied ? "Copied to clipboard" : "Copy My Fortune"}
             </button>
             <button
               onClick={reset}
-              className="w-full rounded px-5 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-parchment/60 transition hover:text-parchment sm:w-auto"
+              className="w-full rounded px-6 py-3.5 font-mono text-base uppercase tracking-[0.15em] text-parchment/60 transition hover:text-parchment sm:w-auto"
             >
               Read Another Date
             </button>
@@ -131,7 +131,7 @@ export default function Home() {
         </section>
       )}
 
-      <footer className="border-t border-terminal-line px-6 py-8 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-parchment/30">
+      <footer className="border-t border-terminal-line px-6 py-10 text-center font-mono text-sm uppercase tracking-[0.2em] text-parchment/30">
         Historical figures are widely reported approximations, for entertainment purposes. Not financial advice, obviously.
       </footer>
     </main>
