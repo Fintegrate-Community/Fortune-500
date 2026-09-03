@@ -62,28 +62,34 @@ export default function ArcanaCard({ arcanaId }: { arcanaId: ArcanaId }) {
           </div>
 
           {/* BACK — revealed */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center overflow-y-auto rounded-sm border-[3px] border-double border-parchment-edge bg-parchment px-6 py-8 text-center text-ink shadow-[0_0_0_1px_rgba(0,0,0,0.4),0_25px_60px_-15px_rgba(0,0,0,0.7)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:px-10">
-            <span className="absolute left-3 top-3 h-5 w-5 border-l-2 border-t-2 border-parchment-edge" />
-            <span className="absolute right-3 top-3 h-5 w-5 border-r-2 border-t-2 border-parchment-edge" />
-            <span className="absolute bottom-3 left-3 h-5 w-5 border-b-2 border-l-2 border-parchment-edge" />
-            <span className="absolute bottom-3 right-3 h-5 w-5 border-b-2 border-r-2 border-parchment-edge" />
+          <div
+            className="absolute inset-0 flex flex-col items-center justify-center overflow-y-auto rounded-sm border-[3px] border-double border-amber/70 px-6 py-8 text-center text-parchment shadow-[0_0_0_1px_rgba(0,0,0,0.5),0_25px_60px_-15px_rgba(0,0,0,0.8)] [backface-visibility:hidden] [transform:rotateY(180deg)] sm:px-10"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 30%, #1a2036 0%, #0a0c16 65%, #060710 100%)",
+            }}
+          >
+            <span className="absolute left-3 top-3 h-5 w-5 border-l-2 border-t-2 border-amber/60" />
+            <span className="absolute right-3 top-3 h-5 w-5 border-r-2 border-t-2 border-amber/60" />
+            <span className="absolute bottom-3 left-3 h-5 w-5 border-b-2 border-l-2 border-amber/60" />
+            <span className="absolute bottom-3 right-3 h-5 w-5 border-b-2 border-r-2 border-amber/60" />
 
             <div className="flex items-center justify-center gap-4">
-              <span className="h-px w-10 bg-parchment-edge" />
-              <span className="font-mono text-base tracking-[0.2em] text-ink-soft sm:text-lg">
+              <span className="h-px w-10 bg-amber/40" />
+              <span className="font-mono text-base tracking-[0.2em] text-amber/80 sm:text-lg">
                 {arcana.numeral}
               </span>
-              <span className="h-px w-10 bg-parchment-edge" />
+              <span className="h-px w-10 bg-amber/40" />
             </div>
-            <h2 className="mt-2 font-[family-name:var(--font-display)] text-4xl font-bold tracking-tight sm:text-5xl">
+            <h2 className="mt-2 font-[family-name:var(--font-display)] text-4xl font-bold tracking-tight text-amber sm:text-5xl">
               {arcana.name}
             </h2>
 
-            <div className="mx-auto mt-6 aspect-[4/5] w-full max-w-[220px] rounded-sm border-2 border-parchment-edge bg-[#ece0c2] p-4 sm:max-w-[260px]">
+            <div className="mx-auto mt-6 aspect-square w-full max-w-[240px] overflow-hidden rounded-full border border-amber/30 p-2 sm:max-w-[280px]">
               <ArcanaIllustration id={arcanaId} />
             </div>
 
-            <p className="mx-auto mt-6 max-w-sm font-[family-name:var(--font-display)] text-xl italic leading-snug text-ink-soft">
+            <p className="mx-auto mt-6 max-w-sm font-[family-name:var(--font-display)] text-xl italic leading-snug text-parchment/85">
               {arcana.tagline}
             </p>
           </div>
